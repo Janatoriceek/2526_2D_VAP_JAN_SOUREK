@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 2em;
+        background-color: #333333;
+        color: antiquewhite;
+        font-size: 2em;
+        font-family: sans-serif;
+    }
+    input {
+        background-color: #777777;
+        color: #111111;
+        font-size: 1em;
+        font-family: sans-serif;
+        border-radius: 11px;
+    }
+    ::placeholder {
+        color: #333333;
+    }
+    </style>
+</head>
+<body>
+    <h1>Zaslaná data</h1>
+    <script>
+        let data = new URLSearchParams(window.location.search);
+        data.forEach((value, name) => {
+            document.body.append(name + " : " + value);
+            document.body.appendChild(document.createElement("br"));
+        })
+    </script>
+</body>
+</html>
