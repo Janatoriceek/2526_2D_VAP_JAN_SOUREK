@@ -1,3 +1,4 @@
+
 .header-nav{
     width: 100%;
     height: 150px;
@@ -26,3 +27,66 @@ iframe:not(.video) {
     width: 80%;
     display: block;
     margin: 0 auto; }
+
+
+body {
+    font-family: Arial, sans-serif;
+    background:#f4f6f8;
+}
+
+h2 {
+    text-align:center;
+}
+
+.rozvrh {
+    display:grid;
+    grid-template-columns: 120px repeat(10, 1fr);
+    gap:10px;
+    max-width:1400px;
+    margin:auto;
+}
+
+.hlavicka {
+    text-align:center;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.den {
+    display:flex;
+    align-items:center;
+    font-weight:bold;
+}
+
+
+.ASW, .INF, .CJL, .OPS, .VAP, .POS, .KYB,
+.MAT, .FYZ, .ANJ, .CIT, .PRG, .ELE, .MSW, .TEV {
+    border-radius:12px;
+    padding:10px;
+    text-align:center;
+    font-weight:bold;
+    color:white;
+}
+
+small {
+    font-weight:normal;
+    opacity:.9;
+}
+
+
+.ASW, .INF { background:#2701ff; }
+.OPS, .VAP { background:#ff0202; }
+.MAT { background:#910606; }
+.CIT { background:#fbc02d; color:black; }
+.PRG { background:#008cff; }
+.ELE { background:#ff8801; }
+.MSW { background:#03f3db; }
+.TEV { background:#ff01dd; }
+.CJL { background:#7c3fe6; }
+.POS, .KYB { background:#13d644; }
+.FYZ { background:#145e05; }
+.ANJ { background:#00ccff; }
+
+.span2 {
+    grid-column: span 2;
+}

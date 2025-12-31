@@ -1,3 +1,4 @@
+<script src="script.js"></script>
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -66,79 +67,76 @@
 <iframe src="zajmy.html" height="700"></iframe>
 
 <h2>Rozvrh</h2>
-    <table>
-        <tr>
-            <td><strong>1</strong><br>8:00 - 8:45</td>
-            <td><strong>2</strong><br>8:55 - 9:40</td>
-            <td><strong>3</strong><br>10:00 - 10:45</td>
-            <td><strong>4</strong><br>10:55 - 11:40</td>
-            <td><strong>5</strong><br>11:50 - 12:35</td>
-            <td><strong>6a</strong><br>12:45 - 13:30</td>
-            <td><strong>6b</strong><br>13:05 - 13:50</td>
-            <td><strong>7</strong><br>14:00 - 14:45</td>
-            <td><strong>8</strong><br>14:50 - 15:35</td>
-            <td><strong>9</strong><br>15:40 - 16:25</td>
-        </tr>
-
-        <tr>
-            <td>ASW<br>ict5</td>
-            <td>INF<br>u2d</td>
-            <td>OPS<br>ict5</td>
-            <td>ANJ<br>u1b</td>
-            <td>CIT<br>u2d</td>
-            <td></td>
-            <td>CJL<br>u2d</td>
-            <td colspan="2">OPS<br>ict3</td>
-            <td></td>
-        </tr>
-
-        <tr>
-            <td>ELE<br>u2d</td>
-            <td>MSW<br>ict5</td>
-            <td>MAT<br>fyz1</td>
-            <td>FYZ<br>fyz1</td>
-            <td>ANJ<br>u2d</td>
-            <td>CJL<br>u2d</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-
-        <tr>
-            <td></td>
-            <td></td>
-            <td>MAT<br>fyz1</td>
-            <td>ANJ<br>u4b</td>
-            <td>VAP<br>ict5</td>
-            <td>FYZ<br>fyz1</td>
-            <td></td>
-            <td>VAP<br>ict5</td>
-            <td></td>
-            <td></td>
-        </tr>
-
-        <tr>
-            <td colspan="2">TEV<br>tcv2</td>
-            <td>OPS<br>ict5</td>
-            <td>MAT<br>fyz1</td>
-            <td>ELE<br>u2d</td>
-            <td></td>
-            <td colspan="2">PRG<br>ict2</td>
-            <td></td>
-            <td></td>
-        </tr>
-
-        <tr>
-            <td></td>
-            <td>MAT<br>fyz1</td>
-            <td>CIT<br>u2d</td>
-            <td>PRG<br>ict1</td>
-            <td>KYB<br>ict5</td>
-            <td>CJL<br>u1c</td>
-            <td></td>
-            <td>ASW<br>ict5</td>
-            <td>KYB<br>ict5</td>
-            <td>POS<br>ict5</td>
-        </tr>
-    </table>
+ 
+<div class="rozvrh">
+ 
+    
+    <div class="hlavicka"></div>
+    <div class="hlavicka">1<br>8:00–8:45</div>
+    <div class="hlavicka">2<br>8:55–9:40</div>
+    <div class="hlavicka">3<br>10:00–10:45</div>
+    <div class="hlavicka">4<br>10:55–11:40</div>
+    <div class="hlavicka">5<br>11:50–12:35</div>
+    <div class="hlavicka">6a<br>12:45–13:30</div>
+    <div class="hlavicka">6b<br>13:05–13:50</div>
+    <div class="hlavicka">7<br>14:00–14:45</div>
+    <div class="hlavicka">8<br>14:50–15:35</div>
+    <div class="hlavicka">9<br>15:40–16:25</div>
+ 
+  
+    <div class="den">Pondělí</div>
+    <div class="ASW">ASW<br><small>ict5</small></div>
+    <div class="INF">INF<br><small>u2d</small></div>
+    <div class="OPS">OPS<br><small>ict5</small></div>
+    <div class="ANJ">ANJ<br><small>u1b</small></div>
+    <div class="CIT">CIT<br><small>u2d</small></div>
+    <div></div>
+    <div class="CJL">CJL<br><small>u2d</small></div>
+    <div class="OPS span2">OPS<br><small>ict3</small></div>
+    <div></div>
+ 
+   
+    <div class="den">Úterý</div>
+    <div class="ELE">ELE<br><small>u2d</small></div>
+    <div class="MSW">MSW<br><small>ict5</small></div>
+    <div class="MAT">MAT<br><small>fyz1</small></div>
+    <div class="FYZ">FYZ<br><small>fyz1</small></div>
+    <div class="ANJ">ANJ<br><small>u2d</small></div>
+    <div class="CJL">CJL<br><small>u2d</small></div>
+    <div></div><div></div><div></div><div></div>
+ 
+ 
+    <div class="den">Středa</div>
+    <div></div><div></div>
+    <div class="MAT">MAT<br><small>fyz1</small></div>
+    <div class="ANJ">ANJ<br><small>u4b</small></div>
+    <div class="VAP">VAP<br><small>ict5</small></div>
+    <div class="FYZ">FYZ<br><small>fyz1</small></div>
+    <div></div>
+    <div class="VAP">VAP<br><small>ict5</small></div>
+    <div></div><div></div>
+ 
+  
+    <div class="den">Čtvrtek</div>
+    <div class="TEV span2">TEV<br><small>tcv2</small></div>
+    <div class="OPS">OPS<br><small>ict5</small></div>
+    <div class="MAT">MAT<br><small>fyz1</small></div>
+    <div class="ELE">ELE<br><small>u2d</small></div>
+    <div></div>
+    <div class="PRG span2">PRG<br><small>ict2</small></div>
+    <div></div><div></div>
+ 
+  
+    <div class="den">Pátek</div>
+    <div></div>
+    <div class="MAT">MAT<br><small>fyz1</small></div>
+    <div class="CIT">CIT<br><small>u2d</small></div>
+    <div class="PRG">PRG<br><small>ict1</small></div>
+    <div class="KYB">KYB<br><small>ict5</small></div>
+    <div class="CJL">CJL<br><small>u1c</small></div>
+    <div></div>
+    <div class="ASW">ASW<br><small>ict5</small></div>
+    <div class="KYB">KYB<br><small>ict5</small></div>
+    <div class="POS">POS<br><small>ict5</small></div>
+ 
+</div>
