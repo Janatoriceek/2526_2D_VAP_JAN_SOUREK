@@ -1,26 +1,74 @@
-const form = document.getElementById('taskForm');
-const taskList = document.getElementById('taskList');
+const thingSpeakReadUrl = "https://api.thingspeak.com/channels/2414963/feeds.json?results=2000";
 
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
+document.getElementById("loadBtn").addEventListener("click", loadDataFromThingSpeak);
 
-    const name = document.getElementById('taskName').value;
-    const date = document.getElementById('taskDate').value;
+function loadDataFromThingSpeak() {
+    document.getElementById("error").innerText = "";
+    document.getElementById("output").innerHTML = "Načítám data...";
 
-    const li = document.createElement('li');
+    const result = fetch(thingSpeakReadUrl);
 
-    const span = document.createElement('span');
-    span.textContent = name;
-    span.className = 'task-name';
-    span.onclick = () => alert('Datum splnění: ' + date);
+    result
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Chyba serveru: " + response.status);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            if (!data.feeds || data.feeds.length === 0) {
+                throw new Error("Žádná data nebyla nalezena.");
+            }
 
-    const button = document.createElement('button');
-    button.textContent = 'Odstranit';
-    button.onclick = () => li.remove();
+            renderTable(data.feeds);
+        })
+        .catch((error) => {
+            document.getElementById("output").innerHTML = "";
+            document.getElementById("error").innerText =
+                "Chyba při načítání: " + error.message;
+        });
+}
 
-    li.appendChild(span);
-    li.appendChild(button);
-    taskList.appendChild(li);
+async function fetchApiWithAwait() {
+    try {
+        const response = await fetch(thingSpeakReadUrl);
 
-    form.reset();
-});
+        if (!response.ok) {
+            throw new Error("Chyba serveru: " + response.status);
+        }
+
+        const json = await response.json();
+        console.log(json);
+    } catch (error) {
+        console.log("Chyba:", error);
+    }
+}
+
+function renderTable(data) {
+    const output = document.getElementById("output");
+    output.innerHTML = "";
+
+    const table = document.createElement("table");
+
+    const header = table.insertRow();
+    header.innerHTML = `
+        <th>Čas</th>
+        <th>Field 1</th>
+        <th>Field 2</th>
+        <th>Field 3</th>
+        <th>Field 4</th>
+    `;
+
+    for (const item of data) {
+        const row = table.insertRow();
+        row.innerHTML = `
+            <td>${item.created_at}</td>
+            <td>${item.field1 ?? "-"}</td>
+            <td>${item.field2 ?? "-"}</td>
+            <td>${item.field3 ?? "-"}</td>
+            <td>${item.field4 ?? "-"}</td>
+        `;
+    }
+
+    output.appendChild(table);
+}

@@ -2,21 +2,21 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>To-Do List</title>
+    <title>ThingSpeak</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>SPRÁVA ÚKOLŮ</h2>
+    <div class="container">
+        <h1>Načítání dat z ThingSpeak</h1>
 
-<form id="taskForm">
-    <input type="text" id="taskName" placeholder="Název úkolu" required>
-    <input type="date" id="taskDate" required>
-    <button type="submit">Přidat úkol</button>
-</form>
+        <button id="loadBtn">Načíst data</button>
 
-<ul id="taskList"></ul>
+        <p id="error" class="error"></p>
 
-<script src="script.js"></script>
+        <div id="output"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
