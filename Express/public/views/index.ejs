@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body background="/backgrounds/<%= user.background %>">
+
+<h1>
+    Ahoj <%= user.username %>
+</h1>
+
+
+
+<form action="/upload-profile" method="POST" enctype="multipart/form-data">
+
+    <input
+        type="file"
+        name="image"
+        hidden
+        id="profile"
+        accept="image/*"
+        onchange="this.form.submit()"
+    >
+
+    <label for="profile">
+
+        <img
+            src="/uploads/<%= user.image %>"
+            width="150"
+        >
+
+    </label>
+
+</form>
+
+
+
+<form action="/upload-background" method="POST" enctype="multipart/form-data">
+
+    <input
+        type="file"
+        name="background"
+        hidden
+        id="background"
+        accept="image/*"
+        onchange="this.form.submit()"
+    >
+
+    <button
+        type="button"
+        onclick="document.getElementById('background').click()"
+    >
+        Změnit pozadí
+    </button>
+
+</form>
+
+<form action="/logout" method="GET">
+    <button type="submit">
+        Odhlásit se 
+    </button>
+</form>
+
+</body>
+</html>
